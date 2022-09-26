@@ -936,7 +936,7 @@ asmlinkage __visible void __init __no_sanitize_address start_kernel(void)
 {
 	char *command_line;
 	char *after_dashes;
-
+	printk("{carlos} : this is the carlos dirty debug kernel, starting\n");
 	set_task_stack_end_magic(&init_task);
 	smp_setup_processor_id();
 	debug_objects_early_init();
@@ -1144,6 +1144,7 @@ asmlinkage __visible void __init __no_sanitize_address start_kernel(void)
 	arch_call_rest_init();
 
 	prevent_tail_call_optimization();
+	printk("{carlos} : this is the carlos dirty debug kernel, ending\n");
 }
 
 /* Call all constructor functions linked into the kernel. */
